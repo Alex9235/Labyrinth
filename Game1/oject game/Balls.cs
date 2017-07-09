@@ -11,8 +11,8 @@ namespace Game1
 {
     class Balls : RoundObject
     {
-        public Vector2 Position { get; set; }
-        public Vector2 Origin { get; set; }
+        public override Vector2 Position { get; set; }
+        private Vector2 Origin { get; set; }
 
 
         public override float Radius
@@ -22,25 +22,22 @@ namespace Game1
 
         public override Vector2 PositionCenter
         {
-            get { return Position; }
+            get { return Position+Origin; }
         }
-
-
-        //private float speed;
         InfoBall info;
         
         public Balls(InfoBall info)
         {
             this.info = info;
-            Origin = new Vector2(info.WidthTexture / 2f, info.WidthTexture / 2f);
+            Origin = new Vector2(Radius, Radius);
         }
         public void Update(GameTime gameTime)
         {
             
         }
-        public void Draw(SpriteBatch spriteBatch )
+        public override void Draw(SpriteBatch spriteBatch )
         {
-            spriteBatch.Draw(info.Texture,Position, null, Color.White, 0f, Origin, info.scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(info.Texture, Position, null, Color.White, 0f, Origin, info.scale, SpriteEffects.None, 0f);
         }
     }
 }

@@ -23,3 +23,28 @@ c:\users\дмитрий\documents\visual studio 2017\Projects\Game1\Game1\obj\x8
 c:\users\дмитрий\documents\visual studio 2017\Projects\Game1\Game1\obj\x86\Debug\Game1.pdb
 c:\users\дмитрий\documents\visual studio 2017\Projects\Game1\Game1\bin\Windows\x86\Debug\Content\Redball.xnb
 c:\users\дмитрий\documents\visual studio 2017\Projects\Game1\Game1\bin\Windows\x86\Debug\Content\Ball.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Ball.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Redball.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Game1.exe
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Game1.pdb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\MonoGame.Framework.dll
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.dll
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.XInput.dll
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\MonoGame.Framework.xml
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.xml
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.XInput.xml
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+D:\Labyrinth\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache
+D:\Labyrinth\Game1\obj\x86\Debug\Game1.exe
+D:\Labyrinth\Game1\obj\x86\Debug\Game1.pdb

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>c:/users/дмитрий/documents/visual studio 2017/Projects/Game1/Game1/Content/redball.png</SourceFile>
-  <SourceTime>2017-07-06T13:34:42.3413132+04:00</SourceTime>
-  <DestFile>c:/users/дмитрий/documents/visual studio 2017/Projects/Game1/Game1/Content/bin/Windows/redball.xnb</DestFile>
-  <DestTime>2017-07-06T13:45:41.2149976+04:00</DestTime>
+  <SourceFile>D:/Labyrinth/Game1/Content/redball.png</SourceFile>
+  <SourceTime>2017-07-07T21:08:25.7111791+04:00</SourceTime>
+  <DestFile>D:/Labyrinth/Game1/Content/bin/Windows/redball.xnb</DestFile>
+  <DestTime>2017-07-09T14:13:23.9654194+04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T19:05:36+04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
