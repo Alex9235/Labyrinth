@@ -23,8 +23,6 @@ c:\users\дмитрий\documents\visual studio 2017\Projects\Game1\Game1\obj\x8
 c:\users\дмитрий\documents\visual studio 2017\Projects\Game1\Game1\obj\x86\Debug\Game1.pdb
 c:\users\дмитрий\documents\visual studio 2017\Projects\Game1\Game1\bin\Windows\x86\Debug\Content\Redball.xnb
 c:\users\дмитрий\documents\visual studio 2017\Projects\Game1\Game1\bin\Windows\x86\Debug\Content\Ball.xnb
-D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Ball.xnb
-D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Redball.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Game1.exe
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Game1.pdb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\MonoGame.Framework.dll
@@ -48,3 +46,5 @@ D:\Labyrinth\Game1\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 D:\Labyrinth\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache
 D:\Labyrinth\Game1\obj\x86\Debug\Game1.exe
 D:\Labyrinth\Game1\obj\x86\Debug\Game1.pdb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\redball.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Wall_1.xnb
