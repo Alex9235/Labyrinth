@@ -14,6 +14,7 @@ namespace Game1
         public abstract void Draw(SpriteBatch spriteBatch);
         public abstract Vector2 PositionCenter { get; }
         public abstract float Radius { get; }
-        public abstract Vector2 StartPosition { get; set; }
+        public virtual Vector2 StartPosition { get; set; }
+        protected abstract Vector2 Origin { get; }
     }
 }
