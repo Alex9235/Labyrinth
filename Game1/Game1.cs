@@ -48,6 +48,14 @@ namespace Game1
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             Ball.Position += new Vector2(0.05f, -0.05f) * gameTime.ElapsedGameTime.Milliseconds;
+            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                Ball.Position += new Vector2(0, 0.05f) * gameTime.ElapsedGameTime.Milliseconds;
+            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                Ball.Position += new Vector2(0, -0.05f) * gameTime.ElapsedGameTime.Milliseconds;
+            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                Ball.Position += new Vector2(-0.05f, 0) * gameTime.ElapsedGameTime.Milliseconds;
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                Ball.Position += new Vector2(0.05f, 0) * gameTime.ElapsedGameTime.Milliseconds;
 
             map.Update(gameTime,Ball);
 
