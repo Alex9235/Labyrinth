@@ -30,7 +30,7 @@ namespace Game1
         }
 
 
-        public Ball(ContentManager Content)
+        public Ball(ContentManager Content, Vector2 StartPosition)
         {
             Info = new InfoBall
             {
@@ -39,7 +39,8 @@ namespace Game1
                 HeightTexture = 512f,
                 scale = 0.08f,
             };
-            Position = StartPosition; 
+            this.StartPosition = StartPosition;
+            Position = this.StartPosition; 
         }
         public void Update(GameTime gameTime)
         {

@@ -31,10 +31,7 @@ namespace Game1
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             map = new Map1(Content);
-            Ball = new Ball(Content)
-            {
-                StartPosition = map.StartPositionBall,
-            };
+            Ball = new Ball(Content, map.StartPositionBall);
 
             
             // TODO: use this.Content to load your game content here
@@ -47,7 +44,6 @@ namespace Game1
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            Ball.Position += new Vector2(0.05f, -0.05f) * gameTime.ElapsedGameTime.Milliseconds;
             if (Keyboard.GetState().IsKeyDown(Keys.Down))
                 Ball.Position += new Vector2(0, 0.05f) * gameTime.ElapsedGameTime.Milliseconds;
             if (Keyboard.GetState().IsKeyDown(Keys.Up))
