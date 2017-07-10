@@ -21,6 +21,5 @@ namespace Game1
         public float scale { get; set; }
         public float HeightTexture { get; set; }
         public float WidthTexture { get; set; }
-        public Vector2 StartPosition { get; set; }
     }
 }
