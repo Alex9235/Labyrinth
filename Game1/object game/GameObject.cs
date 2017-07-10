@@ -15,6 +15,6 @@ namespace Game1
         public abstract Vector2 PositionCenter { get; }
         public abstract float Radius { get; }
         public virtual Vector2 StartPosition { get; set; }
-        protected abstract Vector2 Origin { get; }
+        protected abstract Vector2 Origin { get;  }
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
-    abstract class SquareObject : RoundObject
+    abstract class SquareObject : GameObject
     {
        
     }
