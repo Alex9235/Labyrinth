@@ -15,24 +15,38 @@ namespace Game1
         {
             get { return new Vector2(50f, 200f); }
         }
-        InfoWall infoWall;
+        InfoWall infoWallR0;
+        InfoWall infoWallR90;
         private List<GameObject> objects= new List<GameObject>();
         public Map1(ContentManager content)
         {
-            infoWall = new InfoWall()
+            infoWallR0 = new InfoWall()
             {
                 Texture = content.Load<Texture2D>("Wall_1"),
                 HeightTexture=10f,
                 WidthTexture=181f,
-                scale=1f,
+                Scale=1f,
+                Rotation=0f,
             };
-            objects.Add(new Wall(infoWall)
+            infoWallR90 = new InfoWall()
+            {
+                Texture = content.Load<Texture2D>("Wall_1"),
+                HeightTexture = 10f,
+                WidthTexture = 181f,
+                Scale = 1f,
+                Rotation = 1.57f,
+            };
+            objects.Add(new Wall(infoWallR0)
             {
                 Position = new Vector2(90.5f, 100f),
             });
-            objects.Add(new Wall(infoWall)
+            objects.Add(new Wall(infoWallR0)
             {
                 Position = new Vector2(271.5f, 100f),
+            });
+            objects.Add(new Wall(infoWallR90)
+            {
+                Position = new Vector2(367f, 185.5f),
             });
         }
         public void Update(GameTime gameTime)

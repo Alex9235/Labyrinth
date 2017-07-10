@@ -18,8 +18,9 @@ namespace Game1
     class InfoWall
     {
         public Texture2D Texture { get; set; }
-        public float scale { get; set; }
+        public float Scale { get; set; }
         public float HeightTexture { get; set; }
         public float WidthTexture { get; set; }
+        public float Rotation { get; set; }
     }
 }

@@ -30,12 +30,10 @@ namespace Game1
         public Wall(InfoWall Info)
         {
             this.Info = Info;
-
         }
-
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Info.Texture, Position, null, Color.White, 0f, Origin, Info.scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(Info.Texture, Position, null, Color.White, Info.Rotation, Origin, Info.Scale, SpriteEffects.None, 0f);
         }
     }
 }
