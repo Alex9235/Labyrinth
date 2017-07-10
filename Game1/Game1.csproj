@@ -42,14 +42,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
-    <Compile Include="oject game\GameObject.cs" />
-    <Compile Include="oject game\Ball.cs" />
-    <Compile Include="oject game\InfoObjects.cs" />
-    <Compile Include="oject game\Map1.cs" />
+    <Compile Include="object game\GameObject.cs" />
+    <Compile Include="object game\Ball.cs" />
+    <Compile Include="object game\InfoObjects.cs" />
+    <Compile Include="object game\Map1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="oject game\RoundObject.cs" />
-    <Compile Include="oject game\SquareObject.cs" />
+    <Compile Include="object game\RoundObject.cs" />
+    <Compile Include="object game\SquareObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
