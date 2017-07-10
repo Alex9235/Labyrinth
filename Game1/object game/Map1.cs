@@ -14,13 +14,25 @@ namespace Game1
         public Vector2 StartPositionBall
         {
             get { return new Vector2(50, 200); }
-        } 
+        }
+        InfoWall infoWall;
         private List<GameObject> objects= new List<GameObject>();
         public Map1(ContentManager content)
         {
             objects.Add(new Ball(content)
             {
                 StartPosition = new Vector2(50, 50),
+            });
+            infoWall = new InfoWall()
+            {
+                Texture = content.Load<Texture2D>("Wall_1"),
+                HeightTexture=10f,
+                WidthTexture=181f,
+                scale=1f,
+            };
+            objects.Add(new Wall(infoWall)
+            {
+                Position = new Vector2(0, 100),
             });
         }
         public void Update(GameTime gameTime, GameObject ball1)
