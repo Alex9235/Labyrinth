@@ -12,18 +12,23 @@ namespace Game1
     class Ball : RoundObject
     {
         public override Vector2 Position { get; set; }
-        private Vector2 Origin { get; set; }
-        InfoBall Info;
+        protected override Vector2 Origin
+        {
+            get { return new Vector2(Radius, Radius); }
+        }
         public override Vector2 StartPosition { get; set; } 
+        public override Vector2 PositionCenter
+        {
+            get { return Position+Origin; }
+        }
+
+        InfoBall Info;
+
         public override float Radius
         {
             get { return Info.WidthTexture * Info.scale / 2;}
         }
 
-        public override Vector2 PositionCenter
-        {
-            get { return Position+Origin; }
-        }
 
         public Ball(ContentManager Content)
         {
@@ -35,7 +40,6 @@ namespace Game1
                 scale = 0.08f,
             };
             Position = StartPosition; 
-            Origin = new Vector2(Radius, Radius);
         }
         public void Update(GameTime gameTime)
         {
