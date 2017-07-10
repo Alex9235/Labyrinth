@@ -33,7 +33,7 @@ namespace Game1
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Info.Texture, Position, null, Color.White, Info.Rotation, Origin, Info.Scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(Info.Texture, Position, null, Color.White, Info.Rotation, Origin, 1f, SpriteEffects.None, 0f);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Game1
     {
         public Vector2 StartPositionBall
         {
-            get { return new Vector2(50f, 200f); }
+            get { return new Vector2(50f, 150f); }
         }
         InfoWall infoWallR0;
         InfoWall infoWallR90;
@@ -22,31 +22,33 @@ namespace Game1
         {
             infoWallR0 = new InfoWall()
             {
-                Texture = content.Load<Texture2D>("Wall_1"),
-                HeightTexture=10f,
-                WidthTexture=181f,
-                Scale=1f,
-                Rotation=0f,
+                Texture = content.Load<Texture2D>("Wall_256"),
+                HeightTexture = 8f,
+                WidthTexture = 256f,
+                Rotation = 0f,
             };
             infoWallR90 = new InfoWall()
             {
-                Texture = content.Load<Texture2D>("Wall_1"),
-                HeightTexture = 10f,
-                WidthTexture = 181f,
-                Scale = 1f,
+                Texture = content.Load<Texture2D>("Wall_128"),
+                HeightTexture = 8f,
+                WidthTexture = 128f,
                 Rotation = 1.57f,
             };
             objects.Add(new Wall(infoWallR0)
             {
-                Position = new Vector2(90.5f, 100f),
+                Position = new Vector2(128f, 100f),
             });
             objects.Add(new Wall(infoWallR0)
             {
-                Position = new Vector2(271.5f, 100f),
+                Position = new Vector2(384f, 100f),
             });
             objects.Add(new Wall(infoWallR90)
             {
-                Position = new Vector2(367f, 185.5f),
+                Position = new Vector2(516f, 160f),
+            });
+            objects.Add(new Wall(infoWallR0)
+            {
+                Position = new Vector2(128f, 200f),
             });
         }
         public void Update(GameTime gameTime)
