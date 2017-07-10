@@ -13,16 +13,12 @@ namespace Game1
     {
         public Vector2 StartPositionBall
         {
-            get { return new Vector2(50, 200); }
+            get { return new Vector2(50f, 200f); }
         }
         InfoWall infoWall;
         private List<GameObject> objects= new List<GameObject>();
         public Map1(ContentManager content)
         {
-            objects.Add(new Ball(content)
-            {
-                StartPosition = new Vector2(50, 50),
-            });
             infoWall = new InfoWall()
             {
                 Texture = content.Load<Texture2D>("Wall_1"),
@@ -32,12 +28,16 @@ namespace Game1
             };
             objects.Add(new Wall(infoWall)
             {
-                Position = new Vector2(0, 100),
+                Position = new Vector2(90.5f, 100f),
+            });
+            objects.Add(new Wall(infoWall)
+            {
+                Position = new Vector2(271.5f, 100f),
             });
         }
-        public void Update(GameTime gameTime, GameObject ball1)
+        public void Update(GameTime gameTime)
         {
-            objects[0].Position += new Vector2(0.05f, 0) * gameTime.ElapsedGameTime.Milliseconds;
+            //objects[0].Position += new Vector2(0.05f, 0) * gameTime.ElapsedGameTime.Milliseconds;
         }
         public void StartPositionObjectsofMap()
         {
