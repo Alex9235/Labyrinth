@@ -12,7 +12,7 @@ namespace Game1
     class Wall : SquareObject
     {
         public override Vector2 Position { get; set; }
-        public InfoWall Info;
+        public override InfoWall Info { get; }
         public override float Radius
         {
             get { return Info.HeightTexture / 2; }

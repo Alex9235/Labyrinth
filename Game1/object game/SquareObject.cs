@@ -10,6 +10,6 @@ namespace Game1
 {
     abstract class SquareObject : GameObject
     {
-       
+        public abstract InfoWall Info { get; }
     }
 }
