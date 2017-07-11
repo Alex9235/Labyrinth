@@ -17,10 +17,6 @@ namespace Game1
         {
             get { return Info.HeightTexture / 2; }
         }
-        public override Vector2 PositionCenter
-        {
-            get { return Position+Origin; }
-        }
 
         protected override Vector2 Origin
         {

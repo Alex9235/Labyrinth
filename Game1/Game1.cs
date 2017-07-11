@@ -13,6 +13,7 @@ namespace Game1
         private SpriteBatch spriteBatch;
         private GameObject Ball;
         private Map1 map;
+        private float Speed;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -32,7 +33,7 @@ namespace Game1
             spriteBatch = new SpriteBatch(GraphicsDevice);
             map = new Map1(Content);
             Ball = new Ball(Content, map.StartPositionBall);
-
+            Speed = map.SpeedBall;
             
             // TODO: use this.Content to load your game content here
         }
@@ -47,13 +48,13 @@ namespace Game1
             map.Update(gameTime);
 
             if (Keyboard.GetState().IsKeyDown(Keys.Down))
-                Ball.Position += new Vector2(0, 0.05f) * gameTime.ElapsedGameTime.Milliseconds;
+                Ball.Position += new Vector2(0, Speed) * gameTime.ElapsedGameTime.Milliseconds;
             if (Keyboard.GetState().IsKeyDown(Keys.Up))
-                Ball.Position += new Vector2(0, -0.05f) * gameTime.ElapsedGameTime.Milliseconds;
+                Ball.Position += new Vector2(0, -Speed) * gameTime.ElapsedGameTime.Milliseconds;
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
-                Ball.Position += new Vector2(-0.05f, 0) * gameTime.ElapsedGameTime.Milliseconds;
+                Ball.Position += new Vector2(-Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
-                Ball.Position += new Vector2(0.05f, 0) * gameTime.ElapsedGameTime.Milliseconds;
+                Ball.Position += new Vector2(Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
 
 
             if (map.Hascollisions(Ball))

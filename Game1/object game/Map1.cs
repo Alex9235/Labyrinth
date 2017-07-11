@@ -15,6 +15,10 @@ namespace Game1
         {
             get { return new Vector2(50f, 150f); }
         }
+        public float SpeedBall
+        {
+            get { return 0.2f; }
+        }
         InfoWall infoWallR0;
         InfoWall infoWallR90;
         private List<GameObject> objects= new List<GameObject>();
@@ -78,8 +82,8 @@ namespace Game1
             {
                 if (obj != Obj)
                 {
-                    double a = Math.Sqrt((Obj.PositionCenter.X - obj.PositionCenter.X) * (Obj.PositionCenter.X - obj.PositionCenter.X) +
-                    (Obj.PositionCenter.Y - obj.PositionCenter.Y) * (Obj.PositionCenter.Y - obj.PositionCenter.Y));
+                    double a = Math.Sqrt((Obj.Position.X - obj.Position.X) * (Obj.Position.X - obj.Position.X) +
+                    (Obj.Position.Y - obj.Position.Y) * (Obj.Position.Y - obj.Position.Y));
                     if (a < (Obj.Radius + obj.Radius))
                         return true;
                 }

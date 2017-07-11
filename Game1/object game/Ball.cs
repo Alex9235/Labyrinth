@@ -14,19 +14,14 @@ namespace Game1
         public override Vector2 Position { get; set; }
         protected override Vector2 Origin
         {
-            get { return new Vector2(Radius, Radius); }
+            get { return new Vector2(Info.WidthTexture/2f, Info.HeightTexture/2f); }
         }
         public override Vector2 StartPosition { get; set; } 
-        public override Vector2 PositionCenter
-        {
-            get { return Position+Origin; }
-        }
-
         InfoBall Info;
 
         public override float Radius
         {
-            get { return Info.WidthTexture * Info.scale / 2;}
+            get { return Info.WidthTexture * Info.scale / 2f;}
         }
 
 
