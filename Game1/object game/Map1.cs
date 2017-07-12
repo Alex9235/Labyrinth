@@ -11,6 +11,8 @@ namespace Game1
 {
     public class Map1
     {
+        float WindowHeight = 480;
+        float WindowWidth = 800;
         public Vector2 StartPositionBall
         {
             get { return new Vector2(28f, 204.5f); }
@@ -95,9 +97,7 @@ namespace Game1
             if (obj is RoundObject)
                 if (Hascollisions((RoundObject)obj))
                     return true;
-            if (obj is SquareObject)
-                if (Hascollisions((SquareObject)obj))
-                    return true;
+            
             return false;
         }
         public bool Hascollisions(RoundObject obj)
@@ -123,8 +123,11 @@ namespace Game1
                         Math.Sqrt(obj.Radius*obj.Radius-Math.Pow(Math.Abs(Obj.Info.Position.Y - obj.Position.Y)-Obj.RadiusHeight,2.0)))
                         return true;
                 }
-                
             }
+            if (obj.Position.X-obj.Radius <= 0 || 
+                obj.Position.Y- obj.Radius <= 0 || 
+                obj.Position.X + obj.Radius >= WindowWidth || 
+                obj.Position.Y + obj.Radius >= WindowHeight) return true;
             return false;
         }
         
