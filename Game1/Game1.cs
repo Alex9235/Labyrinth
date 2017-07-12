@@ -14,6 +14,7 @@ namespace Game1
         private GameObject Ball;
         private Map1 map;
         private float Speed;
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -25,7 +26,7 @@ namespace Game1
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            Window.Title = string.Format("{0} * {1}", Window.ClientBounds.Width, Window.ClientBounds.Height);
             base.Initialize();
         }
         protected override void LoadContent()
@@ -39,6 +40,7 @@ namespace Game1
         }
         protected override void UnloadContent()
         {
+            
             // TODO: Unload any non ContentManager content here
         }
         protected override void Update(GameTime gameTime)
@@ -66,7 +68,7 @@ namespace Game1
         }
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Gray);
+            GraphicsDevice.Clear(new Color(0,163,232));
             spriteBatch.Begin();
             map.Draw(spriteBatch);
             Ball.Draw(spriteBatch);
