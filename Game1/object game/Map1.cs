@@ -65,7 +65,7 @@ namespace Game1
         }
         public void StartPositionObjectsofMap()
         {
-            foreach (Ball obj in objects.OfType<Ball>())
+            foreach (RoundObject obj in objects.OfType<RoundObject>())
                 obj.Position = obj.StartPosition;
         }
         public void Draw(SpriteBatch spriteBatch)
@@ -89,37 +89,20 @@ namespace Game1
             {
                 if (obj != Obj)
                 {
-                    double a = Math.Sqrt((Obj.Position.X - obj.Position.X) * (Obj.Position.X - obj.Position.X) +
-                    (Obj.Position.Y - obj.Position.Y) * (Obj.Position.Y - obj.Position.Y));
-                    if (a < (Obj.Radius + obj.Radius))
+                    if (Vector2.Distance(Obj.Position, obj.Position) < (Obj.Radius + obj.Radius))
                         return true;
                 }
             }
             foreach(SquareObject Obj in objects.OfType<SquareObject>())
             {
-                Vector2 intersecion = new Vector2();
-                double K_rotation = Math.Tan((double)Obj.Info.Rotation);
-                if (K_rotation < 0.00001)
-                    K_rotation = 0.00001;
-                else
-                    if (K_rotation > 10000)
-                        K_rotation = 10000;     
-                intersecion.X = (float)((obj.Position.Y - Obj.Position.Y + K_rotation * Obj.Position.X + obj.Position.X / K_rotation) /
-                    (K_rotation + 1 / K_rotation));
-                intersecion.Y = (float)(K_rotation * intersecion.X + Obj.Position.Y - K_rotation * Obj.Position.X);
-                if (Math.Sqrt(Math.Pow(Obj.Position.Y - intersecion.Y, 2.0) + Math.Pow(Obj.Position.X - intersecion.X, 2.0)) <= Obj.Info.WidthTexture/2)
+                if (Math.Abs(Obj.Info.Position.Y - obj.Position.Y) <= Obj.RadiusHeight + obj.Radius)
                 {
-                    if (Math.Sqrt(Math.Pow(obj.Position.Y - intersecion.Y, 2.0) + Math.Pow(obj.Position.X - intersecion.X, 2.0)) < obj.Radius + Obj.Radius)
+                    if (Math.Abs(Obj.Info.Position.X - obj.Position.X) <= Obj.RadiusWidth + obj.Radius)
                         return true;
-                }
-                else
-                {
-                    if (Math.Sqrt(Math.Pow(Obj.Position.Y - intersecion.Y, 2.0) + Math.Pow(Obj.Position.X - intersecion.X, 2.0)) < Obj.Info.WidthTexture / 2 + obj.Radius)
-                        if (Math.Sqrt(Math.Pow(obj.Position.Y - intersecion.Y, 2.0) + Math.Pow(obj.Position.X - intersecion.X, 2.0)) < obj.Radius + Obj.Radius)
-                            return true;
                 }
             }
             return false;
         }
+        
     }
 }
