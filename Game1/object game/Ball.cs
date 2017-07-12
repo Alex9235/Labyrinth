@@ -21,7 +21,7 @@ namespace Game1
 
         public override float Radius
         {
-            get { return Info.WidthTexture * Info.scale / 2f;}
+            get { return Info.WidthTexture * Info.Scale / 2f;}
         }
 
 
@@ -32,7 +32,7 @@ namespace Game1
                 Texture = Content.Load<Texture2D>("redball"),
                 WidthTexture = 512f,
                 HeightTexture = 512f,
-                scale = 0.08f,
+                Scale = 0.08f,
             };
             this.StartPosition = StartPosition;
             Position = this.StartPosition; 
@@ -43,7 +43,7 @@ namespace Game1
         }
         public override void Draw(SpriteBatch spriteBatch )
         {
-            spriteBatch.Draw(Info.Texture, Position, null, Color.White, 0f, Origin, Info.scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(Info.Texture, Position, null, Color.White, 0f, Origin, Info.Scale, SpriteEffects.None, 0f);
         }
     }
 }

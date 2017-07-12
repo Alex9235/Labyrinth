@@ -47,9 +47,9 @@ D:\Labyrinth\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache
 D:\Labyrinth\Game1\obj\x86\Debug\Game1.exe
 D:\Labyrinth\Game1\obj\x86\Debug\Game1.pdb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\redball.xnb
-D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Wall_128.xnb
-D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Wall_16.xnb
-D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Wall_256.xnb
-D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Wall_32.xnb
-D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Wall_64.xnb
-D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Wall_8.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\1.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\2.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\3.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\4.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\5.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\6.xnb
