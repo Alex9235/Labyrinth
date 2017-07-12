@@ -9,6 +9,7 @@ namespace Game1
 {
     public abstract class RoundObject: GameObject
     {
-        
+        public virtual Vector2 StartPosition { get; set; }
+        public abstract float Radius { get; }
     }
 }

@@ -11,5 +11,7 @@ namespace Game1
     abstract class SquareObject : GameObject
     {
         public abstract InfoWall Info { get; }
+        public abstract float RadiusWidth { get; }
+        public abstract float RadiusHeight { get; }
     }
 }
