@@ -112,11 +112,18 @@ namespace Game1
             }
             foreach(SquareObject Obj in objects.OfType<SquareObject>())
             {
-                if (Math.Abs(Obj.Info.Position.Y - obj.Position.Y) <= Obj.RadiusHeight + obj.Radius)
+                if (Math.Abs(Obj.Info.Position.Y - obj.Position.Y) <= Obj.RadiusHeight)
                 {
                     if (Math.Abs(Obj.Info.Position.X - obj.Position.X) <= Obj.RadiusWidth + obj.Radius)
                         return true;
                 }
+                if (Math.Abs(Obj.Info.Position.Y - obj.Position.Y) <= Obj.RadiusHeight+obj.Radius)
+                {
+                    if (Math.Abs(Obj.Info.Position.X - obj.Position.X) <= Obj.RadiusWidth+
+                        Math.Sqrt(obj.Radius*obj.Radius-Math.Pow(Math.Abs(Obj.Info.Position.Y - obj.Position.Y)-Obj.RadiusHeight,2.0)))
+                        return true;
+                }
+                
             }
             return false;
         }
