@@ -74,6 +74,27 @@ namespace Game1
                 HeightTexture = 71f,
                 Position = StartPositionBall,
             }));
+            StartFinish.Add(new Wall(new InfoWall()
+            {
+                Texture = content.Load<Texture2D>("7"),
+                WidthTexture = 557f,
+                HeightTexture = 8f,
+                Position = new Vector2(343.5f, 296f),
+            }));
+            StartFinish.Add(new Wall(new InfoWall()
+            {
+                Texture = content.Load<Texture2D>("8"),
+                WidthTexture = 8f,
+                HeightTexture = 108f,
+                Position = new Vector2(159f, 346f),
+            }));
+            StartFinish.Add(new Wall(new InfoWall()
+            {
+                Texture = content.Load<Texture2D>("9"),
+                WidthTexture = 8f,
+                HeightTexture = 306f,
+                Position = new Vector2(274f, 199f),
+            }));
 
         }
         public void Update(GameTime gameTime)
