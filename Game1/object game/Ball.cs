@@ -11,20 +11,18 @@ namespace Game1
 {
     class Ball : RoundObject
     {
+        InfoBall Info;
         public override Vector2 Position { get; set; }
         protected override Vector2 Origin
         {
             get { return new Vector2(Info.WidthTexture/2f, Info.HeightTexture/2f); }
         }
         public override Vector2 StartPosition { get; set; } 
-        InfoBall Info;
 
         public override float Radius
         {
             get { return Info.WidthTexture * Info.Scale / 2f;}
         }
-
-
         public Ball(ContentManager Content, Vector2 StartPosition)
         {
             Info = new InfoBall

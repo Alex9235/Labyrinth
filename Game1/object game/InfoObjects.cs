@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
+ 
     class InfoBall
     {
         public Texture2D Texture { get; set; }
@@ -17,7 +18,6 @@ namespace Game1
     }
     class InfoWall
     {
-        public Texture2D Texture { get; set; }
         public float HeightTexture { get; set; }
         public float WidthTexture { get; set; }
         public Vector2 Position { get; set; }

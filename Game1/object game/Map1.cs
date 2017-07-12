@@ -13,6 +13,9 @@ namespace Game1
     {
         float WindowHeight = 480;
         float WindowWidth = 800;
+        Texture2D TextureMap;
+        Vector2 PositionMap;
+        Vector2 OriginMap;
         public Vector2 StartPositionBall
         {
             get { return new Vector2(28f, 204.5f); }
@@ -25,75 +28,63 @@ namespace Game1
         private List<GameObject> objects= new List<GameObject>();
         public Map1(ContentManager content)
         {
+            TextureMap = content.Load<Texture2D>("map1");
+            PositionMap = new Vector2(WindowWidth/2f,WindowHeight/2f);
+            OriginMap = new Vector2(WindowWidth / 2f,WindowHeight / 2f);
             objects.Add(new Wall(new InfoWall()
             {
-                Texture = content.Load<Texture2D>("1"),
                 WidthTexture = 8f,
                 HeightTexture = 72f,
                 Position = new Vector2(58f, 81f),
             }));
             objects.Add(new Wall(new InfoWall()
             {
-                Texture = content.Load<Texture2D>("2"),
                 WidthTexture = 8f,
                 HeightTexture = 117f,
                 Position = new Vector2(160f, 58f),
             }));
             objects.Add(new Wall(new InfoWall()
             {
-                Texture = content.Load<Texture2D>("3"),
                 WidthTexture = 168f,
                 HeightTexture = 8f,
                 Position = new Vector2(138f, 113f),
             }));
             objects.Add(new Wall(new InfoWall()
             {
-                Texture = content.Load<Texture2D>("4"),
                 WidthTexture = 8f,
                 HeightTexture = 139f,
                 Position = new Vector2(218f, 179f),
             }));
             objects.Add(new Wall(new InfoWall()
-            {
-                Texture = content.Load<Texture2D>("5"),
+            { 
                 WidthTexture = 164f,
                 HeightTexture = 8f,
                 Position = new Vector2(82f, 165f),
             }));
             objects.Add(new Wall(new InfoWall()
             {
-                Texture = content.Load<Texture2D>("5"),
                 WidthTexture = 164f,
                 HeightTexture = 8f,
                 Position = new Vector2(82f, 244f),
             }));
-            StartFinish.Add(new Wall(new InfoWall()
+            objects.Add(new Wall(new InfoWall()
             {
-                Texture = content.Load<Texture2D>("6"),
-                WidthTexture = 54f,
-                HeightTexture = 71f,
-                Position = StartPositionBall,
-            }));
-            StartFinish.Add(new Wall(new InfoWall()
-            {
-                Texture = content.Load<Texture2D>("7"),
                 WidthTexture = 557f,
                 HeightTexture = 8f,
                 Position = new Vector2(343.5f, 296f),
             }));
-            StartFinish.Add(new Wall(new InfoWall()
+            objects.Add(new Wall(new InfoWall()
             {
-                Texture = content.Load<Texture2D>("8"),
                 WidthTexture = 8f,
                 HeightTexture = 108f,
                 Position = new Vector2(159f, 346f),
             }));
+                WidthTexture = 411f,
             StartFinish.Add(new Wall(new InfoWall()
             {
-                Texture = content.Load<Texture2D>("9"),
-                WidthTexture = 8f,
-                HeightTexture = 306f,
-                Position = new Vector2(274f, 199f),
+                WidthTexture = 54f,
+                HeightTexture = 71f,
+                Position = StartPositionBall,
             }));
 
         }
