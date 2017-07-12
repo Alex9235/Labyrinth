@@ -10,10 +10,8 @@ namespace Game1
 {
     public abstract class GameObject
     {
-        public abstract Vector2 Position { get; set; }
+        public virtual Vector2 Position { get; set; }
         public abstract void Draw(SpriteBatch spriteBatch);
-        public abstract float Radius { get; }
-        public virtual Vector2 StartPosition { get; set; }
         protected abstract Vector2 Origin { get;  }
     }
 }

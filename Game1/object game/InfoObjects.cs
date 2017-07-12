@@ -11,7 +11,7 @@ namespace Game1
     class InfoBall
     {
         public Texture2D Texture { get; set; }
-        public float scale { get; set; }
+        public float Scale { get; set; }
         public float HeightTexture {get; set;}
         public float WidthTexture { get; set;}
     }
@@ -20,6 +20,6 @@ namespace Game1
         public Texture2D Texture { get; set; }
         public float HeightTexture { get; set; }
         public float WidthTexture { get; set; }
-        public float Rotation { get; set; }
+        public Vector2 Position { get; set; }
     }
 }
