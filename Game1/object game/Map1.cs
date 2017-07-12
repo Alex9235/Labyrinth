@@ -13,12 +13,13 @@ namespace Game1
     {
         public Vector2 StartPositionBall
         {
-            get { return new Vector2(50f, 399f); }
+            get { return new Vector2(28f, 204.5f); }
         }
         public float SpeedBall
         {
-            get { return 0.2f; }
+            get { return 0.05f; }//0.2f
         }
+        private List<GameObject> StartFinish = new List<GameObject>();
         private List<GameObject> objects= new List<GameObject>();
         public Map1(ContentManager content)
         {
@@ -55,7 +56,7 @@ namespace Game1
                 Texture = content.Load<Texture2D>("5"),
                 WidthTexture = 164f,
                 HeightTexture = 8f,
-                Position = new Vector2(82f, 156f),
+                Position = new Vector2(82f, 165f),
             }));
             objects.Add(new Wall(new InfoWall()
             {
@@ -64,6 +65,14 @@ namespace Game1
                 HeightTexture = 8f,
                 Position = new Vector2(82f, 244f),
             }));
+            StartFinish.Add(new Wall(new InfoWall()
+            {
+                Texture = content.Load<Texture2D>("6"),
+                WidthTexture = 54f,
+                HeightTexture = 71f,
+                Position = StartPositionBall,
+            }));
+
         }
         public void Update(GameTime gameTime)
         {
@@ -77,6 +86,8 @@ namespace Game1
         public void Draw(SpriteBatch spriteBatch)
         {
             foreach (GameObject obj in objects)
+                obj.Draw(spriteBatch);
+            foreach (GameObject obj in StartFinish)
                 obj.Draw(spriteBatch);
         }
         public bool Hascollisions(GameObject obj)
