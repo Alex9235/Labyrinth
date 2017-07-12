@@ -12,27 +12,27 @@ namespace Game1
     class Wall : SquareObject
     {
         
-        public override InfoWall Info { get; }
+        public override InfoWall IW { get; }
         public override float RadiusWidth 
         {
-            get { return Info.WidthTexture / 2f; }
+            get { return IW.WidthTexture / 2f; }
         }
         public override float RadiusHeight
         {
-            get { return Info.HeightTexture / 2f; }
+            get { return IW.HeightTexture / 2f; }
         }
         protected override Vector2 Origin
         {
-            get { return new Vector2(Info.WidthTexture / 2f, Info.HeightTexture / 2f); }
+            get { return new Vector2(IW.WidthTexture / 2f, IW.HeightTexture / 2f); }
         }
 
         public Wall(InfoWall Info)
         {
-            this.Info = Info;
+            IW = Info;
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Info.Texture, Info.Position, null, Color.White, 0f, Origin, 1f, SpriteEffects.None, 0f);
+            throw new NotImplementedException();
         }
     }
 }

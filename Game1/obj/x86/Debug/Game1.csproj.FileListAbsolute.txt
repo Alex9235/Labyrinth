@@ -57,3 +57,5 @@ D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\10.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\7.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\8.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\9.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Key.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\map1.xnb

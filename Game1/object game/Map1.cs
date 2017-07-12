@@ -24,6 +24,7 @@ namespace Game1
         {
             get { return 0.05f; }//0.2f
         }
+        private List<GameObject> Keys = new List<GameObject>();
         private List<GameObject> StartFinish = new List<GameObject>();
         private List<GameObject> objects= new List<GameObject>();
         public Map1(ContentManager content)
@@ -79,18 +80,46 @@ namespace Game1
                 HeightTexture = 108f,
                 Position = new Vector2(159f, 346f),
             }));
+            objects.Add(new Wall(new InfoWall()
+            {
+                WidthTexture = 171f,
+                HeightTexture = 8f,
+                Position = new Vector2(355.5f, 113f),
+            }));
+            objects.Add(new Wall(new InfoWall()
+            {
                 WidthTexture = 411f,
+                HeightTexture = 8f,
+                Position = new Vector2(539.5f, 50f),
+            }));
+            objects.Add(new Wall(new InfoWall()
+            {
+                WidthTexture = 117f,
+                HeightTexture = 8f,
+                Position = new Vector2(114f, 561.5f),
+            }));
+            objects.Add(new Wall(new InfoWall()
+            {
+                WidthTexture = 149f,
+                HeightTexture = 8f,
+                Position = new Vector2(436.5f, 198f),
+            }));
+            objects.Add(new Wall(new InfoWall()
+            {
+                WidthTexture = 411f,
+                HeightTexture = 8f,
+                Position = new Vector2(539.5f, 50f),
+            }));
             StartFinish.Add(new Wall(new InfoWall()
             {
                 WidthTexture = 54f,
                 HeightTexture = 71f,
                 Position = StartPositionBall,
             }));
-
+            Keys.Add(new Key(content,111.5f,65.5f));
         }
         public void Update(GameTime gameTime)
         {
-            //objects[0].Position += new Vector2(0.05f, 0) * gameTime.ElapsedGameTime.Milliseconds;
         }
         public void StartPositionObjectsofMap()
         {
@@ -99,9 +128,8 @@ namespace Game1
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (GameObject obj in objects)
-                obj.Draw(spriteBatch);
-            foreach (GameObject obj in StartFinish)
+            spriteBatch.Draw(TextureMap, PositionMap, null, Color.White, 0f, OriginMap, 1f, SpriteEffects.None, 0f);
+            foreach (GameObject obj in Keys)
                 obj.Draw(spriteBatch);
         }
         public bool Hascollisions(GameObject obj)
@@ -124,15 +152,15 @@ namespace Game1
             }
             foreach(SquareObject Obj in objects.OfType<SquareObject>())
             {
-                if (Math.Abs(Obj.Info.Position.Y - obj.Position.Y) <= Obj.RadiusHeight)
+                if (Math.Abs(Obj.IW.Position.Y - obj.Position.Y) <= Obj.RadiusHeight)
                 {
-                    if (Math.Abs(Obj.Info.Position.X - obj.Position.X) <= Obj.RadiusWidth + obj.Radius)
+                    if (Math.Abs(Obj.IW.Position.X - obj.Position.X) <= Obj.RadiusWidth + obj.Radius)
                         return true;
                 }
-                if (Math.Abs(Obj.Info.Position.Y - obj.Position.Y) <= Obj.RadiusHeight+obj.Radius)
+                if (Math.Abs(Obj.IW.Position.Y - obj.Position.Y) <= Obj.RadiusHeight+obj.Radius)
                 {
-                    if (Math.Abs(Obj.Info.Position.X - obj.Position.X) <= Obj.RadiusWidth+
-                        Math.Sqrt(obj.Radius*obj.Radius-Math.Pow(Math.Abs(Obj.Info.Position.Y - obj.Position.Y)-Obj.RadiusHeight,2.0)))
+                    if (Math.Abs(Obj.IW.Position.X - obj.Position.X) <= Obj.RadiusWidth+
+                        Math.Sqrt(obj.Radius*obj.Radius-Math.Pow(Math.Abs(Obj.IW.Position.Y - obj.Position.Y)-Obj.RadiusHeight,2.0)))
                         return true;
                 }
             }
