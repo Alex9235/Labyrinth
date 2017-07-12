@@ -106,9 +106,21 @@ namespace Game1
             }));
             objects.Add(new Wall(new InfoWall()
             {
-                WidthTexture = 411f,
+                WidthTexture = 99f,
                 HeightTexture = 8f,
-                Position = new Vector2(539.5f, 50f),
+                Position = new Vector2(552.5f, 239f),
+            }));
+            objects.Add(new Wall(new InfoWall()
+            {
+                WidthTexture = 8f,
+                HeightTexture = 197f,
+                Position = new Vector2(507f, 144.5f),
+            }));
+            objects.Add(new Wall(new InfoWall()
+            {
+                WidthTexture = 8f,
+                HeightTexture = 197f,
+                Position = new Vector2(672f, 144.5f),
             }));
             StartFinish.Add(new Wall(new InfoWall()
             {
