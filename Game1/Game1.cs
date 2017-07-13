@@ -55,7 +55,11 @@ namespace Game1
                 if (gameTime.TotalGameTime.Seconds >= 2)
                     Level = false;
             }
-            if (!map.CollisionsWithFinish(Ball))
+
+            int NumberKey = CollisionsWithKey(Ball, map.Keys);
+            if (NumberKey != 0) map.DeliteKey(NumberKey);
+   
+            if (!(CollisionsWithFinish(Ball, map) && map.Keys.Count == 0))
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.Down))
                     Ball.Position += new Vector2(0, Speed) * gameTime.ElapsedGameTime.Milliseconds;
@@ -65,14 +69,15 @@ namespace Game1
                     Ball.Position += new Vector2(-Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
                 if (Keyboard.GetState().IsKeyDown(Keys.Right))
                     Ball.Position += new Vector2(Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
-                if (true)
+                if (false)
                 {
-                    if (map.Hascollisions(Ball))
+                    if (CollisionsWithStaticObjects(Ball,map))
                     {
                         map.StartPositionObjectsofMap();
                         Ball.Position = map.StartPositionBall;
                     }
                 }
+                
             }    
             base.Update(gameTime);
         }
@@ -86,7 +91,7 @@ namespace Game1
             {
                 spriteBatch.DrawString(StringWin, "Level 1!!!", new Vector2(100, 100), Color.Red);
             }
-            if (map.CollisionsWithFinish(Ball))
+            if (CollisionsWithFinish(Ball, map) && map.Keys.Count == 0)
             {
                 spriteBatch.DrawString(StringWin, "YOUWIN!!!", new Vector2(100, 100), Color.Red);
                 spriteBatch.DrawString(StringEsc, "Please, push 'Esc' for Exit", new Vector2(320, 440), Color.Red);

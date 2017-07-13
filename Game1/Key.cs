@@ -13,14 +13,14 @@ namespace Game1
     {
 
         public override InfoKey IK { get; }
-        public new Vector2 Position { get; set; }
+        public override Vector2 Position { get; set; }
         public Key(ContentManager Content, float X, float Y)
         {
             IK = new InfoKey()
             {
                 Texture = Content.Load<Texture2D>("Key"),
-                WidthTexture = 385f,
-                HeightTexture = 385f,
+                WidthTexture = 171f,
+                HeightTexture = 363f,
                 Scale = 0.1f,
             };
             Position = new Vector2(X, Y);

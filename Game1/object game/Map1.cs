@@ -11,22 +11,22 @@ namespace Game1
 {
     public class Map1
     {
-        float WindowHeight = 400;
-        float WindowWidth = 800;
+        public float WindowHeight = 400;
+        public float WindowWidth = 800;
+        public List<GameObject> Keys = new List<GameObject>();
+        public GameObject Finish;
+        public List<GameObject> objects = new List<GameObject>();
         Texture2D TextureMap;
         Vector2 PositionMap;
         Vector2 OriginMap;
         public Vector2 StartPositionBall
         {
-            get { return new Vector2(28f, 204.5f); }//28f, 204.5f
+            get { return new Vector2(28f, 204.5f); }
         }
         public float SpeedBall
         {
             get { return 0.1f; }//0.2f
         }
-        private List<GameObject> Keys = new List<GameObject>();
-        private SquareObject Finish;
-        private List<GameObject> objects = new List<GameObject>();
         public Map1(ContentManager content)
         {
             TextureMap = content.Load<Texture2D>("map1");
@@ -153,10 +153,13 @@ namespace Game1
                 Position = new Vector2(782.5f, 376f),
             });
             Keys.Add(new Key(content, 111.5f, 65.5f));
+            Keys.Add(new Key(content, 537f, 88f));
+            Keys.Add(new Key(content, 216.5f, 353f));
 
         }
         public void Update(GameTime gameTime)
         {
+
         }
         public void StartPositionObjectsofMap()
         {
