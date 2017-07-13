@@ -48,22 +48,25 @@ namespace Game1
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             map.Update(gameTime);
-
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
-                Ball.Position += new Vector2(0, Speed) * gameTime.ElapsedGameTime.Milliseconds;
-            if (Keyboard.GetState().IsKeyDown(Keys.Up))
-                Ball.Position += new Vector2(0, -Speed) * gameTime.ElapsedGameTime.Milliseconds;
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
-                Ball.Position += new Vector2(-Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
-                Ball.Position += new Vector2(Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
-
-
-            if (map.Hascollisions(Ball))
+            if (!map.CollisionsWithFinish(Ball))
             {
-                map.StartPositionObjectsofMap();
-                Ball.Position = map.StartPositionBall;
-            }
+                if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                    Ball.Position += new Vector2(0, Speed) * gameTime.ElapsedGameTime.Milliseconds;
+                if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                    Ball.Position += new Vector2(0, -Speed) * gameTime.ElapsedGameTime.Milliseconds;
+                if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                    Ball.Position += new Vector2(-Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
+                if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                    Ball.Position += new Vector2(Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
+                if (true)
+                {
+                    if (map.Hascollisions(Ball))
+                    {
+                        map.StartPositionObjectsofMap();
+                        Ball.Position = map.StartPositionBall;
+                    }
+                }
+            }    
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
