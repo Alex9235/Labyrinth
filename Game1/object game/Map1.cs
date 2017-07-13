@@ -57,7 +57,7 @@ namespace Game1
                 Position = new Vector2(218f, 179f),
             }));
             objects.Add(new Wall(new InfoWall()
-            { 
+            {
                 WidthTexture = 164f,
                 HeightTexture = 8f,
                 Position = new Vector2(82f, 165f),
@@ -122,13 +122,38 @@ namespace Game1
                 HeightTexture = 197f,
                 Position = new Vector2(672f, 144.5f),
             }));
-            StartFinish.Add(new Wall(new InfoWall()
+            objects.Add(new Wall(new InfoWall()
             {
-                WidthTexture = 54f,
-                HeightTexture = 71f,
-                Position = StartPositionBall,
+                WidthTexture = 174f,
+                HeightTexture = 8f,
+                Position = new Vector2(661f, 167f),
             }));
-            Keys.Add(new Key(content,111.5f,65.5f));
+            objects.Add(new Wall(new InfoWall()
+            {
+                WidthTexture = 73f,
+                HeightTexture = 8f,
+                Position = new Vector2(763.5f, 98f),
+            }));
+            objects.Add(new Wall(new InfoWall()
+            {
+                WidthTexture = 132f,
+                HeightTexture = 8f,
+                Position = new Vector2(734f, 296f),
+            }));
+            objects.Add(new Wall(new InfoWall()
+            {
+                WidthTexture = 474f,
+                HeightTexture = 8f,
+                Position = new Vector2(563f, 348f),
+            }));
+            Finish = new Wall(new InfoWall()
+            {
+                WidthTexture = 35f,
+                HeightTexture = 48f,
+                Position = new Vector2(782.5f, 376f),
+            });
+            Keys.Add(new Key(content, 111.5f, 65.5f));
+
         }
         public void Update(GameTime gameTime)
         {
