@@ -14,14 +14,14 @@ namespace Game1
         private GameObject Ball;
         private Map1 map;
         private float Speed;
-        
+        SpriteFont StringWin;
+        SpriteFont StringEsc;
+        bool Level = true;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-
         }
-
 
         protected override void Initialize()
         {
@@ -35,12 +35,14 @@ namespace Game1
             map = new Map1(Content);
             Ball = new Ball(Content, map.StartPositionBall);
             Speed = map.SpeedBall;
-            
+            StringWin = Content.Load<SpriteFont>("WIN");
+            StringEsc = Content.Load<SpriteFont>("ESC");
+
             // TODO: use this.Content to load your game content here
         }
         protected override void UnloadContent()
         {
-            
+
             // TODO: Unload any non ContentManager content here
         }
         protected override void Update(GameTime gameTime)
@@ -48,6 +50,11 @@ namespace Game1
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             map.Update(gameTime);
+            if (Level)
+            {
+                if (gameTime.TotalGameTime.Seconds >= 2)
+                    Level = false;
+            }
             if (!map.CollisionsWithFinish(Ball))
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.Down))
@@ -75,6 +82,15 @@ namespace Game1
             spriteBatch.Begin();
             map.Draw(spriteBatch);
             Ball.Draw(spriteBatch);
+            if (Level)
+            {
+                spriteBatch.DrawString(StringWin, "Level 1!!!", new Vector2(100, 100), Color.Red);
+            }
+            if (map.CollisionsWithFinish(Ball))
+            {
+                spriteBatch.DrawString(StringWin, "YOUWIN!!!", new Vector2(100, 100), Color.Red);
+                spriteBatch.DrawString(StringEsc, "Please, push 'Esc' for Exit", new Vector2(320, 440), Color.Red);
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);

@@ -49,3 +49,17 @@
 /processorParam:TextureFormat=Color
 /build:map1.png
 
+#begin WIN.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:WIN.spritefont
+
+#begin ESC.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:ESC.spritefont
+
