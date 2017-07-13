@@ -95,5 +95,83 @@ namespace Game1
 
             base.Draw(gameTime);
         }
+        public bool CollisionsWithStaticObjects(GameObject obj, Map1 Map)
+        {
+            List<GameObject> objects = Map.objects;
+            if (obj is RoundObject)
+            {
+                if (CollisionsWithObjects((RoundObject)obj, objects))
+                    return true;
+                if (CollisionsWithBondary((RoundObject)obj,Map))
+                    return true;
+            }
+            return false;
+        }
+        public bool CollisionsWithObjects(RoundObject obj, List<GameObject> objects)
+        {
+            foreach (RoundObject Obj in objects.OfType<RoundObject>())
+            {
+                if (obj != Obj)
+                {
+                    if (Vector2.Distance(Obj.Position, obj.Position) < (Obj.Radius + obj.Radius))
+                        return true;
+                }
+            }
+            foreach (SquareObject Obj in objects.OfType<SquareObject>())
+            {
+                if (Math.Abs(Obj.IW.Position.Y - obj.Position.Y) <= Obj.RadiusHeight)
+                {
+                    if (Math.Abs(Obj.IW.Position.X - obj.Position.X) <= Obj.RadiusWidth + obj.Radius)
+                        return true;
+                }
+                if (Math.Abs(Obj.IW.Position.Y - obj.Position.Y) <= Obj.RadiusHeight + obj.Radius)
+                {
+                    if (Math.Abs(Obj.IW.Position.X - obj.Position.X) <= Obj.RadiusWidth +
+                        Math.Sqrt(obj.Radius * obj.Radius - Math.Pow(Math.Abs(Obj.IW.Position.Y - obj.Position.Y) - Obj.RadiusHeight, 2.0)))
+                        return true;
+                }
+            }
+            return false;
+        }
+        public int CollisionsWithKey(GameObject obj, List<GameObject> key)
+        {
+            var Obj = (RoundObject)obj;
+            int NumberKey=0;
+      
+            for (int i=0; i<key.Count; i++)
+            {
+                var keyj = (SquareObject)key[i];
+                float Sc = keyj.IK.Scale;
+
+                if (Math.Abs(keyj.Position.Y - Obj.Position.Y) <= keyj.RadiusHeight*Sc)
+                {
+                    if (Math.Abs(keyj.Position.X - Obj.Position.X) <= keyj.RadiusWidth* Sc + Obj.Radius)
+                        return NumberKey=i+1;
+                }
+                if (Math.Abs(keyj.Position.Y - Obj.Position.Y) <= keyj.RadiusHeight*Sc + Obj.Radius)
+                {
+                    if (Math.Abs(keyj.Position.X - Obj.Position.X) <= keyj.RadiusWidth*Sc +
+                        Math.Sqrt(Obj.Radius * Obj.Radius - Math.Pow(Math.Abs(keyj.Position.Y - Obj.Position.Y) - keyj.RadiusHeight* Sc, 2.0)))
+                        return NumberKey=i+1;
+                }
+            }
+            return NumberKey;
+        }
+        public bool CollisionsWithBondary(RoundObject obj,Map1 Map)
+        {
+            if (obj.Position.X - obj.Radius <= 0 ||
+                obj.Position.Y - obj.Radius <= 0 ||
+                obj.Position.X + obj.Radius >= Map.WindowWidth ||
+                obj.Position.Y + obj.Radius >= Map.WindowHeight) return true;
+            return false;
+        }
+        public bool CollisionsWithFinish(GameObject obj, Map1 Map)
+        {
+            SquareObject Obj = (SquareObject)Map.Finish;
+            if (Math.Abs(Obj.IW.Position.X - obj.Position.X) <= Obj.RadiusWidth &&
+                Math.Abs(Obj.IW.Position.Y - obj.Position.Y) <= Obj.RadiusHeight)
+                return true;
+            return false;
+        }
     }
 }

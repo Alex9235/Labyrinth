@@ -169,57 +169,9 @@ namespace Game1
             foreach (GameObject obj in Keys)
                 obj.Draw(spriteBatch);
         }
-        public bool Hascollisions(GameObject obj)
+        public void DeliteKey(int NumberKey)
         {
-            if (obj is RoundObject)
-            {
-                if (CollisionsWithObjects((RoundObject)obj))
-                    return true;
-                if (CollisionsWithBondary((RoundObject)obj))
-                    return true;
-            }
-            return false;
-        }
-        public bool CollisionsWithObjects(RoundObject obj)
-        {
-            foreach (RoundObject Obj in objects.OfType<RoundObject>())
-            {
-                if (obj != Obj)
-                {
-                    if (Vector2.Distance(Obj.Position, obj.Position) < (Obj.Radius + obj.Radius))
-                        return true;
-                }
-            }
-            foreach (SquareObject Obj in objects.OfType<SquareObject>())
-            {
-                if (Math.Abs(Obj.IW.Position.Y - obj.Position.Y) <= Obj.RadiusHeight)
-                {
-                    if (Math.Abs(Obj.IW.Position.X - obj.Position.X) <= Obj.RadiusWidth + obj.Radius)
-                        return true;
-                }
-                if (Math.Abs(Obj.IW.Position.Y - obj.Position.Y) <= Obj.RadiusHeight + obj.Radius)
-                {
-                    if (Math.Abs(Obj.IW.Position.X - obj.Position.X) <= Obj.RadiusWidth +
-                        Math.Sqrt(obj.Radius * obj.Radius - Math.Pow(Math.Abs(Obj.IW.Position.Y - obj.Position.Y) - Obj.RadiusHeight, 2.0)))
-                        return true;
-                }
-            }
-            return false;
-        }
-        public bool CollisionsWithBondary(RoundObject obj)
-        {
-            if (obj.Position.X - obj.Radius <= 0 ||
-                obj.Position.Y - obj.Radius <= 0 ||
-                obj.Position.X + obj.Radius >= WindowWidth ||
-                obj.Position.Y + obj.Radius >= WindowHeight) return true;
-            return false;
-        }
-        public bool CollisionsWithFinish(GameObject obj)
-        {
-            if (Math.Abs(Finish.IW.Position.X - obj.Position.X) <= Finish.RadiusWidth &&
-                Math.Abs(Finish.IW.Position.Y - obj.Position.Y) <= Finish.RadiusHeight)
-                return true;
-            return false;
+            Keys.RemoveAt(NumberKey-1);
         }
         
     }
