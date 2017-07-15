@@ -17,6 +17,8 @@ namespace Game1
         SpriteFont StringWin;
         SpriteFont StringEsc;
         SpriteFont CountKik;
+        SpriteFont Time;
+        TimeSpan TotalTime;
         int Kik=0;
         bool Level = true;
         public Game1()
@@ -39,8 +41,8 @@ namespace Game1
             Speed = map.SpeedBall;
             StringWin = Content.Load<SpriteFont>("WIN");
             StringEsc = Content.Load<SpriteFont>("ESC");
-
             CountKik = Content.Load<SpriteFont>("CountKik");
+            Time = Content.Load<SpriteFont>("Time");
             // TODO: use this.Content to load your game content here
         }
         protected override void UnloadContent()
@@ -61,9 +63,10 @@ namespace Game1
 
             int NumberKey = CollisionsWithKey(Ball, map.Keys);
             if (NumberKey != 0) map.DeliteKey(NumberKey);
-   
+            
             if (!(CollisionsWithFinish(Ball, map) && map.Keys.Count == 0))
             {
+                TotalTime = gameTime.TotalGameTime;
                 if (Keyboard.GetState().IsKeyDown(Keys.Down))
                     Ball.Position += new Vector2(0, Speed) * gameTime.ElapsedGameTime.Milliseconds;
                 if (Keyboard.GetState().IsKeyDown(Keys.Up))
@@ -99,13 +102,19 @@ namespace Game1
             {
                 spriteBatch.DrawString(StringWin, "YOUWIN!!!", new Vector2(100, 100), Color.Red);
                 spriteBatch.DrawString(StringEsc, "Please, push 'Esc' for Exit", new Vector2(320, 440), Color.Red);
+                spriteBatch.DrawString(Time, "Time: " + TotalTime.ToString("hh\\:mm\\:ss"), new Vector2(200, 265), Color.Red);
                 spriteBatch.DrawString(CountKik, "Count Kik: "+ Kik, new Vector2(470, 265), Color.Red);
             }
+            else
+            {
+                spriteBatch.DrawString(Time, "Time: " + TotalTime.ToString("hh\\:mm\\:ss"), new Vector2(85, 430), Color.Red);
                 spriteBatch.DrawString(CountKik, "Count kik: "+Kik, new Vector2(380, 430), Color.Red);
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);
         }
+
         public bool CollisionsWithStaticObjects(GameObject obj, Map1 Map)
         {
             List<GameObject> objects = Map.objects;

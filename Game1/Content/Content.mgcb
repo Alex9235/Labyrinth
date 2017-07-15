@@ -70,3 +70,10 @@
 /processorParam:TextureFormat=Compressed
 /build:CountKik.spritefont
 
+#begin Time.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Time.spritefont
+
