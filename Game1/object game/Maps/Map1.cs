@@ -9,29 +9,45 @@ using Microsoft.Xna.Framework;
 
 namespace Game1
 {
-    public class Map1
+    public class Map1:Maps
     {
-        public float WindowHeight = 400;
-        public float WindowWidth = 800;
-        public List<GameObject> Keys = new List<GameObject>();
-        public GameObject Finish;
-        public List<GameObject> objects = new List<GameObject>();
-        Texture2D TextureMap;
-        Vector2 PositionMap;
-        Vector2 OriginMap;
-        public Vector2 StartPositionBall
+        public override InfoMap Info { get; }
+        public Map1(ContentManager content) : base(content)
+        {
+            Info = new InfoMap()
+            {
+                Texture = content.Load<Texture2D>("map1"),
+                HeightTexture = 400f,
+                WidthTexture = 800f,
+                Position = new Vector2(0, 0),
+            };
+            AddObjects();
+            Finish = new Wall(new InfoWall()
+            {
+                WidthTexture = 35f,
+                HeightTexture = 48f,
+                Position = new Vector2(782.5f, 376f),
+            });
+            Keys.Add(new Key(content, 111.5f, 65.5f));
+            Keys.Add(new Key(content, 537f, 88f));
+            Keys.Add(new Key(content, 216.5f, 353f));
+        }
+
+        //........................
+        public override Vector2 StartPositionBall
         {
             get { return new Vector2(28f, 204.5f); }
         }
-        public float SpeedBall
+        public override float SpeedBall
         {
             get { return 0.1f; }//0.2f
         }
-        public Map1(ContentManager content)
+        public override void Update(GameTime gameTime)
         {
-            TextureMap = content.Load<Texture2D>("map1");
-            PositionMap = new Vector2(WindowWidth / 2f, WindowHeight / 2f);
-            OriginMap = new Vector2(WindowWidth / 2f, WindowHeight / 2f);
+
+        }
+        protected override void AddObjects()
+        {
             objects.Add(new Wall(new InfoWall()
             {
                 WidthTexture = 8f,
@@ -146,35 +162,6 @@ namespace Game1
                 HeightTexture = 8f,
                 Position = new Vector2(563f, 348f),
             }));
-            Finish = new Wall(new InfoWall()
-            {
-                WidthTexture = 35f,
-                HeightTexture = 48f,
-                Position = new Vector2(782.5f, 376f),
-            });
-            Keys.Add(new Key(content, 111.5f, 65.5f));
-            Keys.Add(new Key(content, 537f, 88f));
-            Keys.Add(new Key(content, 216.5f, 353f));
-
-        }
-        public void Update(GameTime gameTime)
-        {
-
-        }
-        public void StartPositionObjectsofMap()
-        {
-            foreach (RoundObject obj in objects.OfType<RoundObject>())
-                obj.Position = obj.StartPosition;
-        }
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(TextureMap, PositionMap, null, Color.White, 0f, OriginMap, 1f, SpriteEffects.None, 0f);
-            foreach (GameObject obj in Keys)
-                obj.Draw(spriteBatch);
-        }
-        public void DeliteKey(int NumberKey)
-        {
-            Keys.RemoveAt(NumberKey-1);
         }
         
     }

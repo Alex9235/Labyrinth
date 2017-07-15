@@ -8,7 +8,13 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
- 
+   public class InfoMap
+    {
+        public Texture2D Texture { get; set; }
+        public float HeightTexture { get; set; }
+        public float WidthTexture { get; set; }
+        public Vector2 Position { get; set; }
+    }
     class InfoBall
     {
         public Texture2D Texture { get; set; }

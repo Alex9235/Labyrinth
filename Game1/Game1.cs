@@ -12,7 +12,7 @@ namespace Game1
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private GameObject Ball;
-        private Map1 map;
+        private Maps map;
         private float Speed;
         SpriteFont StringWin;
         SpriteFont StringEsc;
@@ -115,7 +115,7 @@ namespace Game1
             base.Draw(gameTime);
         }
 
-        public bool CollisionsWithStaticObjects(GameObject obj, Map1 Map)
+        public bool CollisionsWithStaticObjects(GameObject obj, Maps Map)
         {
             List<GameObject> objects = Map.objects;
             if (obj is RoundObject)
@@ -177,15 +177,15 @@ namespace Game1
             }
             return NumberKey;
         }
-        public bool CollisionsWithBondary(RoundObject obj,Map1 Map)
+        public bool CollisionsWithBondary(RoundObject obj,Maps Map)
         {
             if (obj.Position.X - obj.Radius <= 0 ||
                 obj.Position.Y - obj.Radius <= 0 ||
-                obj.Position.X + obj.Radius >= Map.WindowWidth ||
-                obj.Position.Y + obj.Radius >= Map.WindowHeight) return true;
+                obj.Position.X + obj.Radius >= Map.Info.WidthTexture ||
+                obj.Position.Y + obj.Radius >= Map.Info.HeightTexture) return true;
             return false;
         }
-        public bool CollisionsWithFinish(GameObject obj, Map1 Map)
+        public bool CollisionsWithFinish(GameObject obj, Maps Map)
         {
             SquareObject Obj = (SquareObject)Map.Finish;
             if (Math.Abs(Obj.IW.Position.X - obj.Position.X) <= Obj.RadiusWidth &&
