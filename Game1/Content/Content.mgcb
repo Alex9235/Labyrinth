@@ -63,3 +63,10 @@
 /processorParam:TextureFormat=Color
 /build:Key.png
 
+#begin CountKik.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:CountKik.spritefont
+

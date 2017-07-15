@@ -16,6 +16,8 @@ namespace Game1
         private float Speed;
         SpriteFont StringWin;
         SpriteFont StringEsc;
+        SpriteFont CountKik;
+        int Kik=0;
         bool Level = true;
         public Game1()
         {
@@ -38,6 +40,7 @@ namespace Game1
             StringWin = Content.Load<SpriteFont>("WIN");
             StringEsc = Content.Load<SpriteFont>("ESC");
 
+            CountKik = Content.Load<SpriteFont>("CountKik");
             // TODO: use this.Content to load your game content here
         }
         protected override void UnloadContent()
@@ -69,12 +72,13 @@ namespace Game1
                     Ball.Position += new Vector2(-Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
                 if (Keyboard.GetState().IsKeyDown(Keys.Right))
                     Ball.Position += new Vector2(Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
-                if (false)
+                if (true)
                 {
                     if (CollisionsWithStaticObjects(Ball,map))
                     {
                         map.StartPositionObjectsofMap();
                         Ball.Position = map.StartPositionBall;
+                        Kik++;
                     }
                 }
                 
@@ -95,7 +99,9 @@ namespace Game1
             {
                 spriteBatch.DrawString(StringWin, "YOUWIN!!!", new Vector2(100, 100), Color.Red);
                 spriteBatch.DrawString(StringEsc, "Please, push 'Esc' for Exit", new Vector2(320, 440), Color.Red);
+                spriteBatch.DrawString(CountKik, "Count Kik: "+ Kik, new Vector2(470, 265), Color.Red);
             }
+                spriteBatch.DrawString(CountKik, "Count kik: "+Kik, new Vector2(380, 430), Color.Red);
             spriteBatch.End();
 
             base.Draw(gameTime);

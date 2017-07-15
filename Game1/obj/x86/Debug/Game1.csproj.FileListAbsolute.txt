@@ -61,3 +61,4 @@ D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Key.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\map1.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\ESC.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\WIN.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\CountKik.xnb
