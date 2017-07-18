@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -19,9 +20,14 @@ namespace Game1
         SpriteFont StringEsc;
         SpriteFont Date;
         TimeSpan TotalTime;
-        int Kik=0;
+        SoundEffect SoundKik;
+        SoundEffect SoundKey;
+        SoundEffect LevelEnd;
+
+        int Kik = 0;
         bool Level = true;
         bool StartPlay = false ;
+        bool soundEnd = true;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -44,6 +50,11 @@ namespace Game1
             StringWin = Content.Load<SpriteFont>("WIN");
             StringEsc = Content.Load<SpriteFont>("ESC");
             Date = Content.Load<SpriteFont>("Date");
+            SoundKik = Content.Load<SoundEffect>("sound_kik");
+            SoundKey = Content.Load<SoundEffect>("sound_key");
+            LevelEnd = Content.Load<SoundEffect>("End_level");
+            Start = new StartMenu(Content);
+
             // TODO: use this.Content to load your game content here
         }
         protected override void UnloadContent()
@@ -68,6 +79,7 @@ namespace Game1
                 int NumberKey = CollisionsWithKey(Ball, map.Keys);
                 if (NumberKey != 0)
                 {
+                    SoundKey.Play();
                     map.DeliteKey(NumberKey);
                 }
 
@@ -86,12 +98,23 @@ namespace Game1
                     {
                         if (CollisionsWithStaticObjects(Ball, map))
                         {
+                            SoundKik.Play();
                             map.StartPositionObjectsofMap();
                             Ball.Position = map.StartPositionBall;
                             Kik++;
                         }
                     }
                 }
+                else
+                {
+                    if (soundEnd)
+                    {
+                        LevelEnd.Play();
+                        soundEnd = false;
+                    }
+                }      
+
+                
                 
                 base.Update(gameTime);
             }
