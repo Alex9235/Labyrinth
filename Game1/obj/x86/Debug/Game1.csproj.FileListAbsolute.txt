@@ -63,6 +63,8 @@ D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\ESC.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\WIN.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\sound_kik.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Date.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Labyrinth.xnb
+D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\Enter.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\sound_key.wma
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\sound_key.xnb
 D:\Labyrinth\Game1\bin\Windows\x86\Debug\Content\sound_kik.wma
