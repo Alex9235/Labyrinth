@@ -53,6 +53,7 @@
     <Compile Include="object game\RoundObject\RoundObject.cs" />
     <Compile Include="object game\SquareObject\SquareObject.cs" />
     <Compile Include="object game\SquareObject\Wall.cs" />
+    <Compile Include="StartMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

@@ -23,14 +23,14 @@ namespace Game1
         {
             get { return Info.WidthTexture * Info.Scale / 2f;}
         }
-        public Ball(ContentManager Content, Vector2 StartPosition)
+        public Ball(ContentManager Content, Vector2 StartPosition, float scale)
         {
             Info = new InfoBall
             {
                 Texture = Content.Load<Texture2D>("redball"),
                 WidthTexture = 512f,
                 HeightTexture = 512f,
-                Scale = 0.08f,
+                Scale = scale,
             };
             this.StartPosition = StartPosition;
             Position = this.StartPosition; 
