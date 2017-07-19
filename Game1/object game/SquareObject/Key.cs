@@ -7,13 +7,14 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace Game1 
+namespace Labyrinth 
 {
     class Key : SquareObject
     {
 
         public override InfoKey IK { get; }
         public override Vector2 Position { get; set; }
+
         public Key(ContentManager Content, float X, float Y)
         {
             IK = new InfoKey()
@@ -25,14 +26,17 @@ namespace Game1
             };
             Position = new Vector2(X, Y);
         }
+
         public override float RadiusWidth
         {
             get { return IK.WidthTexture / 2f; }
         }
+
         public override float RadiusHeight
         {
             get { return IK.HeightTexture / 2f; }
         }
+
         protected override Vector2 Origin
         {
             get { return new Vector2(IK.WidthTexture / 2f, IK.HeightTexture / 2f); }

@@ -7,20 +7,23 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace Game1
+namespace Labyrinth
 {
     class Wall : SquareObject
     {
         
         public override InfoWall IW { get; }
+
         public override float RadiusWidth 
         {
             get { return IW.WidthTexture / 2f; }
         }
+
         public override float RadiusHeight
         {
             get { return IW.HeightTexture / 2f; }
         }
+
         protected override Vector2 Origin
         {
             get { return new Vector2(IW.WidthTexture / 2f, IW.HeightTexture / 2f); }
@@ -30,6 +33,7 @@ namespace Game1
         {
             IW = Info;
         }
+
         public override void Draw(SpriteBatch spriteBatch)
         {
             throw new NotImplementedException();

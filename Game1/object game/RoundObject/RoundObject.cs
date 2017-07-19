@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1
+namespace Labyrinth
 {
     public abstract class RoundObject: GameObject
     {

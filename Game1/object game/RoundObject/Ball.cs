@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1
+namespace Labyrinth
 {
     class Ball : RoundObject
     {
-        InfoBall Info;
+        private InfoBall Info;
         public override Vector2 Position { get; set; }
+
         protected override Vector2 Origin
         {
             get { return new Vector2(Info.WidthTexture/2f, Info.HeightTexture/2f); }
@@ -23,6 +24,7 @@ namespace Game1
         {
             get { return Info.WidthTexture * Info.Scale / 2f;}
         }
+
         public Ball(ContentManager Content, Vector2 StartPosition, float scale)
         {
             Info = new InfoBall
@@ -35,10 +37,12 @@ namespace Game1
             this.StartPosition = StartPosition;
             Position = this.StartPosition; 
         }
+
         public void Update(GameTime gameTime)
         {
             
         }
+
         public override void Draw(SpriteBatch spriteBatch )
         {
             spriteBatch.Draw(Info.Texture, Position, null, Color.White, 0f, Origin, Info.Scale, SpriteEffects.None, 0f);

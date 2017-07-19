@@ -7,11 +7,12 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
 
-namespace Game1
+namespace Labyrinth
 {
     public class Map1:Maps
     {
         public override InfoMap Info { get; }
+
         public Map1(ContentManager content) : base(content)
         {
             Info = new InfoMap()
@@ -33,19 +34,21 @@ namespace Game1
             Keys.Add(new Key(content, 216.5f, 353f));
         }
 
-        //........................
         public override Vector2 StartPositionBall
         {
             get { return new Vector2(28f, 204.5f); }
         }
+
         public override float SpeedBall
         {
             get { return 0.1f; }//0.2f
         }
+
         public override void Update(GameTime gameTime)
         {
 
         }
+
         protected override void AddObjects()
         {
             objects.Add(new Wall(new InfoWall()

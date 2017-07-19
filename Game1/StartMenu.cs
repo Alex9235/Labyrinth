@@ -8,25 +8,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1
+namespace Labyrinth
 {
     class StartMenu
     {
-        SpriteFont Labyrinth;
-        GameObject Ball;
-        SpriteFont Enter;
+        private SpriteFont Labyrinth;
+        private GameObject Ball;
+        private SpriteFont Enter;
+
         public StartMenu(ContentManager content)
         {
             Labyrinth = content.Load<SpriteFont>("Labyrinth");
             Enter = content.Load<SpriteFont>("Enter");
             Ball = new Ball(content, new Vector2(400,200), 0.9f);
         }
+
         public bool Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 return true;
             return false;
         }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             Ball.Draw(spriteBatch);
