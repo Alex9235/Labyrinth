@@ -94,7 +94,7 @@ namespace Game1
                         Ball.Position += new Vector2(-Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
                     if (Keyboard.GetState().IsKeyDown(Keys.Right))
                         Ball.Position += new Vector2(Speed, 0) * gameTime.ElapsedGameTime.Milliseconds;
-                    if (false)
+                    if (true)
                     {
                         if (CollisionsWithStaticObjects(Ball, map))
                         {
@@ -113,9 +113,6 @@ namespace Game1
                         soundEnd = false;
                     }
                 }      
-
-                
-                
                 base.Update(gameTime);
             }
             else StartPlay = Start.Update(gameTime);
